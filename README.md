@@ -3,7 +3,7 @@
 Use TypeScript and ES6+ directly in your React Native projects.
 
 This is a fork of
-[ds300/ds300/react-native-typescript-transformer](https://github.com/ds300/react-native-typescript-transformer/)
+[ds300/react-native-typescript-transformer](https://github.com/ds300/react-native-typescript-transformer/)
 and [facebook/metro-bundler](https://github.com/facebook/metro-bundler) with an
 extra environment variable, `PLATFORM_TARGET`. See <a
 href="#platform-specific-builds">Platform Specific Builds</a> for more
