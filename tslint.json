@@ -1,0 +1,9 @@
+{
+  "extends": ["tslint:latest"],
+  "rules": {
+    "quotemark": [true, "single", "jsx-double", "avoid-escape"],
+    "no-console": [true, "log"],
+    "interface-name": [false],
+    "no-submodule-imports": [false]
+  }
+}
