@@ -106,12 +106,12 @@ const tsConfig = (() => {
     if (fs.existsSync(resolvedTsconfigPath)) {
       return loadJsonFile(resolvedTsconfigPath);
     }
-    console.warn(
+    console.log(
       'tsconfig file specified by TSCONFIG_PATH environment variable was not found',
     );
-    console.warn(`TSCONFIG_PATH = ${TSCONFIG_PATH}`);
-    console.warn(`resolved = ${resolvedTsconfigPath}`);
-    console.warn('looking in app root directory');
+    console.log(`TSCONFIG_PATH = ${TSCONFIG_PATH}`);
+    console.log(`resolved = ${resolvedTsconfigPath}`);
+    console.log('looking in app root directory');
     throw TSCONFIG_PATH;
   }
 
@@ -122,9 +122,9 @@ const tsConfig = (() => {
       return loadJsonFile(tsConfigPath);
     }
 
-    console.warn('PLATFORM_TARGET specified but no tsconfig.json was found.');
-    console.warn(`PLATFORM_TARGET = ${process.env.PLATFORM_TARGET}`);
-    console.warn(`resolved path = ${tsConfigPath}`);
+    console.log('PLATFORM_TARGET specified but no tsconfig.json was found.');
+    console.log(`PLATFORM_TARGET = ${process.env.PLATFORM_TARGET}`);
+    console.log(`resolved path = ${tsConfigPath}`);
   }
 
   {
