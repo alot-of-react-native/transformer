@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-process.env.TSCONFIG_PATH = path.join(__dirname, 'tsconfig.json');
+process.env.PLATFORM_TARGET = 'tests';
 const transformer = require('../dist');
 const FIXTURES = '__fixtures__';
 

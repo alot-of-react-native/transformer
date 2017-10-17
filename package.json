@@ -1,7 +1,7 @@
 {
   "name": "@alot/transformer",
   "version": "1.0.0",
-  "description": "",
+  "description": "A TypeScript and Babel transformer for React Native.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -16,7 +16,7 @@
     "prepublish": "npm run clean && npm run build",
     "prepublishOnly": "npm run test"
   },
-  "author": "",
+  "author": "Aaron Friel <mayreply@aaronfriel.com>",
   "license": "ISC",
   "dependencies": {
     "@types/node": "^8.0.41",

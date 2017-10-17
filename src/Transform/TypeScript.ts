@@ -114,11 +114,27 @@ const tsConfig = (() => {
     console.warn('looking in app root directory');
     throw TSCONFIG_PATH;
   }
-  const tsConfigPath = appRootPath.resolve('tsconfig.json');
-  if (fs.existsSync(tsConfigPath)) {
-    return loadJsonFile(tsConfigPath);
+
+  // Attempt platform target resolution next:
+  if (typeof process.env.PLATFORM_TARGET === 'string') {
+    const tsConfigPath = appRootPath.resolve(path.join(process.env.PLATFORM_TARGET, 'tsconfig.json'));
+    if (fs.existsSync(tsConfigPath)) {
+      return loadJsonFile(tsConfigPath);
+    }
+
+    console.warn('PLATFORM_TARGET specified but no tsconfig.json was found.');
+    console.warn(`PLATFORM_TARGET = ${process.env.PLATFORM_TARGET}`);
+    console.warn(`resolved path = ${tsConfigPath}`);
   }
-  throw new Error(`Unable to find tsconfig.json at ${tsConfigPath}`);
+
+  {
+    const tsConfigPath = appRootPath.resolve('tsconfig.json');
+    if (fs.existsSync(tsConfigPath)) {
+      return loadJsonFile(tsConfigPath);
+    }
+
+    throw new Error(`Unable to find tsconfig.json at ${tsConfigPath}`);
+  }
 })();
 
 const compilerOptions = {
